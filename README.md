@@ -17,7 +17,7 @@ optional arguments:
                       calculation and visualization) or 'cdf' (empirical CDF
                       calculation and visualization); default='eta'
   -beta BETA          false alarm rate for Hoeffding's rule; default=0.001
-  -N N                number of states in the original Markov chain; default=4
+  -N N                total number of different labels in the i.i.d. sequence; default=4
   -fig_dir FIG_DIR    folder for saving the output plot; default='./Results/'
   -show_pic SHOW_PIC  whether or not to show the output plot; indicated by 'T'
                       or 'F'; default='F'
