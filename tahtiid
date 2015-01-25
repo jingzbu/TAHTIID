@@ -1,0 +1,56 @@
+#!/usr/bin/env python
+"""
+This file contains all the simulation experiments
+"""
+
+from __future__ import absolute_import, division
+
+__author__ = "Jing Zhang"
+__email__ = "jingzbu@gmail.com"
+__status__ = "Development"
+
+
+import sys
+import os
+
+import argparse
+
+ROOT = os.environ.get('tahtiid_ROOT')
+if ROOT is None:
+    print('Please set <tahtiid_ROOT> variable in bash.')
+    sys.exit()
+if not ROOT.endswith('TAHTIID'):
+    print('Please set <tahtiid_ROOT> path variable correctly. '
+          'Please change the name of the <ROOT> folder to TAHTIID. Other name(s) '
+          'will cause import problem.')
+    sys.exit()
+sys.path.insert(0, ROOT)
+sys.path.insert(0, ROOT.rstrip('TAHTIID'))
+
+
+from TAHTIID.util.util import visualization
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument("-e", default='eta', type=str, \
+                    help="experiment type; indicated by 'eta' (threshold calculation and visualization) or \
+                    'cdf' (empirical CDF calculation and visualization); default='eta'")
+parser.add_argument("-beta", default=0.001, type=float, help="false alarm rate for Hoeffding's rule; default=0.001")
+parser.add_argument("-N", default=4, type=int, help="number of states in the original Markov chain; default=4")
+parser.add_argument("-fig_dir", default='./Results/', type=str, \
+                    help="folder for saving the output plot; default='./Results/'")
+parser.add_argument("-show_pic", default='F', type=str, \
+                    help="whether or not to show the output plot; indicated by 'T' or 'F'; default='F'")
+args = parser.parse_args()
+
+if args.e != 'eta' and args.e != 'cdf':
+    raise Exception("No such experiment; probably you have specified -e incorrectly.")
+if args.beta > 1 or args.beta < 0:
+    raise Exception("Invalid beta; please specify -beta within the interval (0, 1).")
+if args.N <= 0:
+    raise Exception("Invalid N; please specify -N to be a positive integer.")
+if args.show_pic != 'F' and args.show_pic != 'T':
+    raise Exception("Invalid show_pic; please specify -show_pic using 'T' or 'F'.")
+
+test = visualization(args)
+test.run()
