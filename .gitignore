@@ -1,5 +1,4 @@
 .idea/*
 *.pyc
-Results/*
 Results/*.eps
 Results/*.npz
