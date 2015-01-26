@@ -1,7 +1,8 @@
 TAHTIID
 ======
 
-TAHTIID is short for Threshold Approximation for Hoeffding Test under I.I.D. Assumption.
+TAHTIID is short for Threshold Approximation for Hoeffding Test under I.I.D. Assumption. The main theoretical result that we
+apply in this package is [J. Unnikrishnan and D. Huang](http://lcav.epfl.ch/files/content/sites/lcav/files/people/jayakrishnan.unnikrishnan/TIT13submitted.pdf).
 
 
 Usage
