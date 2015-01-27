@@ -26,11 +26,11 @@ Examples:
 
  `$ ./tahtiid -beta 0.1 -N 3`
  
- `$ ./tahtiid -e cdf -beta 0.01 -N 3 -show_pic T`
+ `$ ./tahtiid -e cdf -beta 0.01 -N 3 -show_pic`
 
- `$ ./tahtiid -beta 0.01 -N 4 -show_pic T`
+ `$ ./tahtiid -beta 0.01 -N 4 -show_pic`
 
- `$ ./tahtiid -beta 0.0001 -N 5 -show_pic T`
+ `$ ./tahtiid -beta 0.0001 -N 5 -show_pic`
 
 
 
