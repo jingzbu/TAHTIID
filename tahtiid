@@ -39,8 +39,8 @@ parser.add_argument("-beta", default=0.001, type=float, help="false alarm rate f
 parser.add_argument("-N", default=4, type=int, help="number of states in the original Markov chain; default=4")
 parser.add_argument("-fig_dir", default='./Results/', type=str, \
                     help="folder for saving the output plot; default='./Results/'")
-parser.add_argument("-show_pic", default='F', type=str, \
-                    help="whether or not to show the output plot; indicated by 'T' or 'F'; default='F'")
+parser.add_argument("-show_pic", default='F', action='store_true', \
+                    help="whether or not to show the output plot; default=False")
 args = parser.parse_args()
 
 if args.e != 'eta' and args.e != 'cdf':
@@ -49,8 +49,6 @@ if args.beta > 1 or args.beta < 0:
     raise Exception("Invalid beta; please specify -beta within the interval (0, 1).")
 if args.N <= 0:
     raise Exception("Invalid N; please specify -N to be a positive integer.")
-if args.show_pic != 'F' and args.show_pic != 'T':
-    raise Exception("Invalid show_pic; please specify -show_pic using 'T' or 'F'.")
 
 test = visualization(args)
 test.run()
