@@ -336,7 +336,7 @@ class visualization:
         elif args.e == 'eta':
             eta_actual, = plt.plot(n_range, eta_actual, "ro-")
             eta_wc_1, = plt.plot(n_range, eta_wc_1, "bs-")
-            eta_wc_2, = plt.plot(n_range, eta_wc_2, "k+-")
+            eta_wc_2, = plt.plot(n_range, eta_wc_2, "k*-")
             eta_Sanov, = plt.plot(n_range, eta_Sanov, "g^-")
 
             plt.legend([eta_actual, eta_wc_1, eta_wc_2, eta_Sanov], ["theoretical (actual) value", \

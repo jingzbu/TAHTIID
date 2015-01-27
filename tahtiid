@@ -39,7 +39,7 @@ parser.add_argument("-beta", default=0.001, type=float, help="false alarm rate f
 parser.add_argument("-N", default=4, type=int, help="number of states in the original Markov chain; default=4")
 parser.add_argument("-fig_dir", default='./Results/', type=str, \
                     help="folder for saving the output plot; default='./Results/'")
-parser.add_argument("-show_pic", default='F', action='store_true', \
+parser.add_argument("-show_pic", default=False, action='store_true', \
                     help="whether or not to show the output plot; default=False")
 args = parser.parse_args()
 
