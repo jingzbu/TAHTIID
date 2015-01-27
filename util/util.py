@@ -302,7 +302,7 @@ class visualization:
             print('--> Estimated threshold (by weak convergence): %f'%eta_2)
             print('--> Estimated threshold (by weak convergence (simplified)): %f'%eta_3)
             print("--> Estimated threshold (by Sanov's theorem): %f"%eta_4)
-            print('-------------------------------------------------------')
+            print('-' * 68)
 
         np.savez(fig_dir + 'eta_KL_mf.npz', n_range=n_range, KL_actual=KL_actual, KL_wc_1=KL_wc_1, KL_wc_2=KL_wc_2,\
                  eta_actual=eta_actual, eta_wc_1=eta_wc_1, eta_wc_2=eta_wc_2, eta_Sanov=eta_Sanov)
