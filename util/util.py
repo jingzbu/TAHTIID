@@ -272,6 +272,10 @@ class visualization:
         beta = args.beta
         fig_dir = args.fig_dir
         mu_0, mu_1, H_1, Sigma_1, W_1 = SamplePathGen(N)
+        print("The actual PL mu_0 is ")
+        print(mu_0)
+        print("The estimated PL mu_1 is ")
+        print(mu_1)
         # print mu_0, mu_1
         # assert(1 == 2)
 
