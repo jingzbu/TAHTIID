@@ -16,4 +16,3 @@ python test_cdf.py -j 13
 python test_cdf.py -j 14
 python test_cdf.py -j 15
 python test_cdf.py -j 16
-python test_cdf.py -j 17
